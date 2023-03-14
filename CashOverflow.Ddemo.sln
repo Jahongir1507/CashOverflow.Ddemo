@@ -5,6 +5,8 @@ VisualStudioVersion = 17.6.33417.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashOverflow.Ddemo", "CashOverflow.Ddemo\CashOverflow.Ddemo.csproj", "{231AC821-53CE-495F-BDDC-C2379AA2199F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashOverflow.Infrastructure.Build", "CashOverflow.Infrastructure.Build\CashOverflow.Infrastructure.Build.csproj", "{F93E4655-FF07-4A88-88EE-2D94FF4F4FFE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{231AC821-53CE-495F-BDDC-C2379AA2199F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{231AC821-53CE-495F-BDDC-C2379AA2199F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{231AC821-53CE-495F-BDDC-C2379AA2199F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F93E4655-FF07-4A88-88EE-2D94FF4F4FFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F93E4655-FF07-4A88-88EE-2D94FF4F4FFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F93E4655-FF07-4A88-88EE-2D94FF4F4FFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F93E4655-FF07-4A88-88EE-2D94FF4F4FFE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
