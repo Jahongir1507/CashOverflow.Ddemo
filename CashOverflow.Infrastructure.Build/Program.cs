@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------
-// Copyright (c) Coalition of Good-Hearted Engineers
-// Developed by CashOverflow Team
+// Copyright (c) Coalition of Good-Hearted Engineer
+// Developed by CashOverflow Jahongir
 // --------------------------------------------------------
 
 using System.Collections.Generic;
