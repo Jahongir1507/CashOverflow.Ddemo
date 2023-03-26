@@ -5,14 +5,17 @@
 
 using Microsoft.AspNetCore.Mvc;
 
-namespace CashOverflow.Ddemo.Controllers {
+namespace CashOverflow.Ddemo.Controllers
+{
     [Route("api/[controller]")]
     [ApiController]
-    public class HomeController : ControllerBase {
+    public class HomeController : ControllerBase
+    {
 
         [HttpGet]
 
-        public string Get() {
+        public string Get()
+        {
 
             return "Cash flows...";
         }
