@@ -15,8 +15,7 @@ namespace CashOverflow.Ddemo.Brokers.Storages
         public async ValueTask<Job> InsertJobAsync(Job job) =>
             await InsertAsync(job);
 
-        public IQueryable<Job> SelectAllJobs() =>
-            SelectAll<Job>();
+        public IQueryable<Job> SelectAllJobs() => SelectAll<Job>();
 
         public async ValueTask<Job> SelectJobByIdAsync(Guid jobId) =>
             await SelectAsync<Job>(jobId);

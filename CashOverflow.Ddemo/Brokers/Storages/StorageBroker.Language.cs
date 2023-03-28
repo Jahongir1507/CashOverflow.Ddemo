@@ -19,8 +19,7 @@ namespace CashOverflow.Ddemo.Brokers.Storages
         public async ValueTask<Language> SelectLanguageByIdAsync(Guid languageId) =>
             await SelectAsync<Language>(languageId);
 
-        public IQueryable<Language> SelectAllLanguages() =>
-            SelectAll<Language>();
+        public IQueryable<Language> SelectAllLanguages() => SelectAll<Language>();
 
         public async ValueTask<Language> UpdateLanguageAsync(Language language) =>
             await UpdateAsync<Language>(language);

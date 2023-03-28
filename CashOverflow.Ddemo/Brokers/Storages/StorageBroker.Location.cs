@@ -18,8 +18,7 @@ namespace CashOverflow.Ddemo.Brokers.Storages
         public async ValueTask<Location> SelectLocationByIdAsync(Guid locationId) =>
             await SelectAsync<Location>(locationId);
 
-        public IQueryable<Location> SelectAllLocations() =>
-            SelectAll<Location>();
+        public IQueryable<Location> SelectAllLocations() => SelectAll<Location>();
 
         public async ValueTask<Location> UpdateLocationAsync(Location location) =>
             await UpdateAsync<Location>(location);
