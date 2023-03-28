@@ -11,5 +11,10 @@ namespace CashOverflow.Ddemo.Brokers.Storages
     public partial class StorageBroker
     {
         public DbSet<Review> Review { get; set; }
+
+        public async ValueTask<Review> InsertReviewAsync(Review review) =>
+            await InsertAsync<Review>(review);
+
+        public IQueryable<Review> SelectAllReviews() => SelectAll<Review>();
     }
 }
