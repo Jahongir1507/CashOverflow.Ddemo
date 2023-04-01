@@ -3,7 +3,6 @@
 // Developed by CashOverflow Jahongir
 // --------------------------------------------------------
 
-using CashOverflow.Ddemo.Models.Locations;
 using EFxceptions;
 using Microsoft.EntityFrameworkCore;
 
