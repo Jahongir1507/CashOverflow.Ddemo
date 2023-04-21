@@ -17,10 +17,10 @@ namespace CashOverflow.Ddemo.Services.Foundations.Jobs
         {
             this.storageBroker = storageBroker;
         }
-        public ValueTask<Job> AddJobAsync(Job job)
-        {
-            throw new NotImplementedException();
-        }
+
+        public async ValueTask<Job> AddJobAsync(Job job) =>
+            await this.storageBroker.InsertJobAsync(job);
+       
 
         public ValueTask<Job> ModifyJobAsync(Job job)
         {
