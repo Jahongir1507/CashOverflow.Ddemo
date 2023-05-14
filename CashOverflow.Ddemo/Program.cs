@@ -3,6 +3,7 @@
 // Developed by CashOverflow Jahongir
 // --------------------------------------------------------
 
+using CashOverflow.Ddemo.Brokers.Loggings;
 using CashOverflow.Ddemo.Brokers.Storages;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +15,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddTransient<IStorageBroker, StorageBroker>();
+builder.Services.AddTransient<ILoggingBroker, LoggingBroker>();
 
 var app = builder.Build();
 
