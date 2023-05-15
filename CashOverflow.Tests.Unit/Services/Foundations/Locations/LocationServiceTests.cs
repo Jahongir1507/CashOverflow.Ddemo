@@ -3,12 +3,15 @@
 // Developed by CashOverflow Jahongir
 // --------------------------------------------------------
 
+using System.Linq.Expressions;
 using CashOverflow.Ddemo.Brokers.Loggings;
 using CashOverflow.Ddemo.Brokers.Storages;
 using CashOverflow.Ddemo.Models.Locations;
+using CashOverflow.Ddemo.Models.Locations.Exceptions;
 using CashOverflow.Ddemo.Services.Foundations.Locations;
 using Moq;
 using Tynamix.ObjectFiller;
+using Xeptions;
 
 namespace CashOverflow.Tests.Unit.Services.Foundations.Locations
 {
@@ -28,6 +31,9 @@ namespace CashOverflow.Tests.Unit.Services.Foundations.Locations
                 loggingBroker: this.loggingBrokerMock.Object
                 );
         }
+        private Expression<Func<Xeption, bool>> SameExceptionAs(Xeption expectedException) =>
+            actualException => actualException.SameExceptionAs(expectedException);
+       
 
         private DateTimeOffset GetRandomDateTimeOffset() =>
             new DateTimeRange(earliestDate: DateTime.UnixEpoch).GetValue();
