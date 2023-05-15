@@ -3,10 +3,10 @@
 // Developed by CashOverflow Jahongir
 // --------------------------------------------------------
 
-using System.Reflection.Metadata.Ecma335;
 using CashOverflow.Ddemo.Brokers.Loggings;
 using CashOverflow.Ddemo.Brokers.Storages;
 using CashOverflow.Ddemo.Models.Locations;
+using CashOverflow.Ddemo.Models.Locations.Exceptions;
 
 namespace CashOverflow.Ddemo.Services.Foundations.Locations
 {
@@ -23,7 +23,23 @@ namespace CashOverflow.Ddemo.Services.Foundations.Locations
             this.loggingBroker = loggingBroker;
         }
 
-        public async ValueTask<Location> AddLocationAsync(Location location) =>
-            await this.storageBroker.InsertLocationAsync(location);
+        public async ValueTask<Location> AddLocationAsync(Location location)
+        {
+            try
+            {
+                if (location == null)
+                {
+                    throw new NullLocationException();
+                }
+                return await this.storageBroker.InsertLocationAsync(location);
+            }
+            catch (NullLocationException nullLocationException)
+            {
+                var locationValidationException = new LocationValidationException(nullLocationException);
+                this.loggingBroker.LogError(locationValidationException);
+
+                throw locationValidationException;
+            }
+        }
     }
 }
