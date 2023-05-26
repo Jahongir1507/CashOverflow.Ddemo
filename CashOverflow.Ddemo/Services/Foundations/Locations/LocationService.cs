@@ -10,7 +10,7 @@ using CashOverflow.Ddemo.Models.Locations.Exceptions;
 
 namespace CashOverflow.Ddemo.Services.Foundations.Locations
 {
-    public class LocationService : ILocationService
+    public partial class LocationService : ILocationService
     {
         private readonly IStorageBroker storageBroker;
         private readonly ILoggingBroker loggingBroker;
@@ -27,10 +27,8 @@ namespace CashOverflow.Ddemo.Services.Foundations.Locations
         {
             try
             {
-                if (location == null)
-                {
-                    throw new NullLocationException();
-                }
+                ValidateLocationNotNull(location);
+
                 return await this.storageBroker.InsertLocationAsync(location);
             }
             catch (NullLocationException nullLocationException)
